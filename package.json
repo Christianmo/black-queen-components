@@ -1,0 +1,58 @@
+{
+  "name": "black-queen-components",
+  "version": "0.68.0",
+  "description": "",
+  "main": "dist/index.js",
+  "exports": {
+    "./atoms": "./dist/components/atoms/index.js",
+    "./atoms/*": "./dist/components/atoms/*/index.js",
+    "./molecules": "./dist/components/molecules/index.js",
+    "./molecules/*": "./dist/components/molecules/*/index.js",
+    "./organisms": "./dist/components/organisms/index.js",
+    "./organisms/*": "./dist/components/organisms/*/index.js",
+    "./utils": "./dist/common/utils/index.js",
+    "./constants": "./dist/common/constants/index.js"
+  },
+  "scripts": {
+    "minify": "uglifyjs --compress --mangle --output dist/index.min.js -- dist/index.js",
+    "build": "./node_modules/.bin/tsc --declaration && npm run minify",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.5",
+    "@storybook/addon-interactions": "^7.4.5",
+    "@storybook/addon-links": "^7.4.5",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.5",
+    "@storybook/react": "^7.4.5",
+    "@storybook/react-vite": "^7.4.5",
+    "@storybook/testing-library": "^0.2.1",
+    "@types/glidejs__glide": "^3.6.5",
+    "@types/react": "^18.2.22",
+    "prettier": "3.1.1",
+    "storybook": "^7.4.5",
+    "typescript": "^5.2.2",
+    "uglify-js": "^3.17.4"
+  },
+  "peerDependencies": {
+    "@glidejs/glide": "3.6.0",
+    "classnames": "2.3.2",
+    "styled-components": "6.0.8"
+  },
+  "dependencies": {
+    "@glidejs/glide": "3.6.0",
+    "classnames": "2.3.2",
+    "isomorphic-dompurify": "^1.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "6.0.8"
+  }
+}

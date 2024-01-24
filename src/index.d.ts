@@ -1,0 +1,1 @@
+declare module 'black-queen-components';
