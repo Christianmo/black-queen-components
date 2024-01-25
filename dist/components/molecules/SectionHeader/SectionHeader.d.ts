@@ -1,7 +1,7 @@
 import { FC } from "react";
 interface SectionHeaderPros {
-    helpText: string;
     title: string;
+    helpText?: string;
     description: string;
     titleTag?: 'h1' | 'h2' | 'h3';
     className?: string;

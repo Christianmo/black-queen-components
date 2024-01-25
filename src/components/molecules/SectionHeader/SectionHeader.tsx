@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { Title, Paragraph } from "../../atoms";
 
 interface SectionHeaderPros {
-  helpText: string;
   title: string;
+  helpText?: string;
   description: string;
   titleTag?: 'h1' | 'h2' | 'h3';
   className?: string;
