@@ -1,6 +1,6 @@
 {
   "name": "black-queen-components",
-  "version": "0.73.0",
+  "version": "0.82.0",
   "description": "",
   "main": "dist/index.js",
   "exports": {
@@ -10,6 +10,8 @@
     "./molecules/*": "./dist/components/molecules/*/index.js",
     "./organisms": "./dist/components/organisms/index.js",
     "./organisms/*": "./dist/components/organisms/*/index.js",
+    "./layout": "./dist/components/layout/index.js",
+    "./layout/*": "./dist/components/layout/*/index.js",    
     "./utils": "./dist/common/utils/index.js",
     "./constants": "./dist/common/constants/index.js"
   },

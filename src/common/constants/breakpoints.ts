@@ -1,8 +1,7 @@
 export const breakpoints: any = {
-  mobile: 400,
-  tablet: 600,
-  ipad: 900,
-  laptop: 1280,
-  desktop: 1440,
-  widescreen: 1920,
+  small: 576,
+  medium: 768,
+  large: 992,
+  xlarge: 1200,
+  xxlarge: 1400,
 }

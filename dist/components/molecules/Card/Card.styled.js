@@ -13,7 +13,6 @@ exports.Container = (0, styled_components_1.default)('div') `
   border-color ${(props) => props.theme.colors.black};
   border-radius: 8px;
   display: flex;
-  max-width: 500px;
 `;
 exports.CardImage = (0, styled_components_1.default)('div') `
   box-sizing: border-box;

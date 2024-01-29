@@ -8,7 +8,7 @@ const styled_components_1 = __importDefault(require("styled-components"));
 const utils_1 = require("../../../common/utils");
 const constants_1 = require("../../../common/constants");
 exports.Container = (0, styled_components_1.default)('div') `
-  @media ${(0, utils_1.mq)(constants_1.breakpoints.laptop - 1, 'max')} {
+  @media ${(0, utils_1.mq)(constants_1.breakpoints.large - 1, 'max')} {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
     height: 100vh;
     opacity: 0;
@@ -45,7 +45,7 @@ exports.List = (0, styled_components_1.default)('ul') `
     padding: 10px;
   }
 
-  @media ${(0, utils_1.mq)(constants_1.breakpoints.laptop, 'min')} {
+  @media ${(0, utils_1.mq)(constants_1.breakpoints.large, 'min')} {
     display: flex;
   
     li {

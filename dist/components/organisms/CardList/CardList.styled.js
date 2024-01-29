@@ -4,14 +4,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Container = void 0;
+const utils_1 = require("../../../common/utils");
+const constants_1 = require("../../../common/constants");
 const styled_components_1 = __importDefault(require("styled-components"));
 exports.Container = (0, styled_components_1.default)('section') `
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media ${(0, utils_1.mq)(constants_1.breakpoints.medium)} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media ${(0, utils_1.mq)(constants_1.breakpoints.large)} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   
   .bq-card {
-    max-width: calc(50% - 20px);
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    
+    @media ${(0, utils_1.mq)(constants_1.breakpoints.large)} {
+      flex-direction: row;
+    }     
   }
 `;

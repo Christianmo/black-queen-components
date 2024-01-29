@@ -61,7 +61,7 @@ exports.Column = (0, styled_components_1.default)('div') `
   &:nth-child(3) {
     justify-content: flex-end;
 
-    @media ${(0, utils_1.mq)(constants_1.breakpoints.laptop, 'min')} {
+    @media ${(0, utils_1.mq)(constants_1.breakpoints.large, 'min')} {
       button {
         display: none;
       }

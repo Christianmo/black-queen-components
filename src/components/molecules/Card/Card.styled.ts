@@ -8,7 +8,6 @@ export const Container = styled('div')`
   border-color ${(props) => props.theme.colors.black};
   border-radius: 8px;
   display: flex;
-  max-width: 500px;
 `; 
 
 export const CardImage = styled('div')`

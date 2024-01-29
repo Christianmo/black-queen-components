@@ -3,7 +3,7 @@ import { mq, getRem } from '../../../common/utils';
 import { breakpoints } from '../../../common/constants';
 
 export const Container = styled('div')`
-  @media ${mq(breakpoints.laptop - 1, 'max')} {
+  @media ${mq(breakpoints.large - 1, 'max')} {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
     height: 100vh;
     opacity: 0;
@@ -41,7 +41,7 @@ export const List = styled('ul')`
     padding: 10px;
   }
 
-  @media ${mq(breakpoints.laptop, 'min')} {
+  @media ${mq(breakpoints.large, 'min')} {
     display: flex;
   
     li {

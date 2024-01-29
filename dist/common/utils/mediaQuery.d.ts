@@ -1,1 +1,1 @@
-export declare const mq: (breakpoint: number, type: string) => string;
+export declare const mq: (breakpoint: number, type?: string) => string;

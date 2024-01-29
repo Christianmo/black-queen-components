@@ -39,7 +39,7 @@ export const Column = styled('div')`
   &:nth-child(3) {
     justify-content: flex-end;
 
-    @media ${mq(breakpoints.laptop, 'min')} {
+    @media ${mq(breakpoints.large, 'min')} {
       button {
         display: none;
       }

@@ -27,6 +27,7 @@ const config: StorybookConfig = {
           '@atoms': '../src/components/atoms',
           '@molecules': '../src/components/molecules',
           '@organisms': '../src/components/organisms',
+          '@layout': '../src/components/layout',
           '@utils': '../src/utils',
           '@constants': '../src/constants',
         }
