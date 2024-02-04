@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Column = exports.Container = exports.Wrapper = exports.GlobalStyle = void 0;
+exports.Column = exports.Wrapper = exports.GlobalStyle = void 0;
 const styled_components_1 = __importStar(require("styled-components"));
 const utils_1 = require("../../../common/utils");
 const constants_1 = require("../../../common/constants");
@@ -33,21 +33,25 @@ exports.GlobalStyle = (0, styled_components_1.createGlobalStyle) `
   }
 `;
 exports.Wrapper = (0, styled_components_1.default)('div') `
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
   left: 0;
+  padding: 20px;
   position: fixed;
   top: 0;
-  transition: all 0.2s ease-in-out;
   width: 100%;
-`;
-exports.Container = (0, styled_components_1.default)('div') `
-  align-items: center;
-  display: flex;
-  padding: 20px;
-  transition: all 0.2s ease-in-out;
+
+  @media ${(0, utils_1.mq)(constants_1.breakpoints.large, 'min')} {    
+    &.is-fixed {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+  }
 `;
 exports.Column = (0, styled_components_1.default)('div') `
   display: flex;
   justify-content: center;
+  max-height: 40px;
   width: 100%;
 
   &:nth-child(1) {

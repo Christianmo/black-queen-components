@@ -11,7 +11,7 @@ interface HeaderProps {
         height: number;
         width: number;
     };
-    isotype: {
+    fixedLogo?: {
         src: string;
         alt: string;
         height: number;

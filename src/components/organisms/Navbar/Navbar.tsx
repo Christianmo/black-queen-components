@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Image } from "../../atoms/Image";
 import { Hamburger } from "../../atoms/Hamburger";
 import { Menu } from "../../molecules/Menu";
-import { Wrapper, Container, Column } from './Navbar.styled'
+import { Wrapper, Column } from './Navbar.styled'
 
 interface LinkProps {
   label: string;
@@ -18,17 +18,17 @@ interface HeaderProps {
     height: number;
     width: number;
   };
-  isotype: {
+  fixedLogo?: {
     src: string;
     alt: string;
     height: number;
     width: number;
-  };
+  }
   links: LinkProps[];
   className?: string;
 }
 
-export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, isotype, links }) => {
+export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, fixedLogo, links }) => {
   const [isMenuOpen, setMenuState] = useState(false);
   const [isNavbarFixed, setHeaderState] = useState(false);
   const headerEl = useRef<any>()
@@ -56,8 +56,16 @@ export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, isotype, 
 
   return (
     <Wrapper className={classNames(className, { 'is-fixed': isNavbarFixed })} ref={headerEl}>
-      <Container>
-        <Column>
+      <Column>
+        {fixedLogo && isNavbarFixed ? (
+          <Image 
+            src={fixedLogo.src}
+            alt={fixedLogo.alt}
+            height={fixedLogo.height}
+            width={fixedLogo.width}
+            isSingle
+          />
+        ) : (
           <Image 
             src={logo.src}
             alt={logo.alt}
@@ -65,17 +73,17 @@ export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, isotype, 
             width={logo.width}
             isSingle
           />
-        </Column>
-        <Column>
-          <Menu
-            links={links}
-            isOpen={isMenuOpen}
-            isFixed={isNavbarFixed} />
-        </Column>
-        <Column>
-          <Hamburger isOpen={isMenuOpen} onClick={handleClick} />
-        </Column>
-      </Container>
+        )}
+      </Column>
+      <Column>
+        <Menu
+          links={links}
+          isOpen={isMenuOpen}
+          isFixed={isNavbarFixed} />
+      </Column>
+      <Column>
+        <Hamburger isOpen={isMenuOpen} onClick={handleClick} />
+      </Column>
     </Wrapper>
   )
 }

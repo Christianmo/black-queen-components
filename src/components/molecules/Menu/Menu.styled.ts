@@ -18,6 +18,7 @@ export const Container = styled('div')`
     &.is-open {
       background-color: white;
       opacity: 1;
+      padding: 20px;
       right: 0%;
     }
   }
@@ -39,6 +40,11 @@ export const List = styled('ul')`
   a {
     display: block;
     padding: 10px;
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   @media ${mq(breakpoints.large, 'min')} {
@@ -46,6 +52,12 @@ export const List = styled('ul')`
   
     li {
       display: inline-flex;
+
+      a {
+        &:hover {
+          text-decoration: none;
+        }      
+      }
     }
   }
 `;

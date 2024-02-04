@@ -23,6 +23,7 @@ exports.Container = (0, styled_components_1.default)('div') `
     &.is-open {
       background-color: white;
       opacity: 1;
+      padding: 20px;
       right: 0%;
     }
   }
@@ -43,6 +44,11 @@ exports.List = (0, styled_components_1.default)('ul') `
   a {
     display: block;
     padding: 10px;
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   @media ${(0, utils_1.mq)(constants_1.breakpoints.large, 'min')} {
@@ -50,6 +56,12 @@ exports.List = (0, styled_components_1.default)('ul') `
   
     li {
       display: inline-flex;
+
+      a {
+        &:hover {
+          text-decoration: none;
+        }      
+      }
     }
   }
 `;

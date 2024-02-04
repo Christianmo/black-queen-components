@@ -1,6 +1,6 @@
 {
   "name": "black-queen-components",
-  "version": "0.82.0",
+  "version": "0.93.0",
   "description": "",
   "main": "dist/index.js",
   "exports": {

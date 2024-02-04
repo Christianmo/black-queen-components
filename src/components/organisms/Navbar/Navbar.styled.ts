@@ -9,23 +9,26 @@ export const GlobalStyle = createGlobalStyle<{paddingTop: number}>`
 `;
 
 export const Wrapper = styled('div')`
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
   left: 0;
+  padding: 20px;
   position: fixed;
   top: 0;
-  transition: all 0.2s ease-in-out;
   width: 100%;
-`;
 
-export const Container = styled('div')`
-  align-items: center;
-  display: flex;
-  padding: 20px;
-  transition: all 0.2s ease-in-out;
-`; 
+  @media ${mq(breakpoints.large, 'min')} {    
+    &.is-fixed {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+  }
+`;
 
 export const Column = styled('div')`
   display: flex;
   justify-content: center;
+  max-height: 40px;
   width: 100%;
 
   &:nth-child(1) {
