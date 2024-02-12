@@ -29,11 +29,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Navbar = void 0;
 const react_1 = __importStar(require("react"));
 const classnames_1 = __importDefault(require("classnames"));
+const single_page_scrolling_navigation_1 = require("single-page-scrolling-navigation");
 const Image_1 = require("../../atoms/Image");
 const Hamburger_1 = require("../../atoms/Hamburger");
 const Menu_1 = require("../../molecules/Menu");
 const Navbar_styled_1 = require("./Navbar.styled");
-const Navbar = ({ className = 'bq-navbar', logo, fixedLogo, links }) => {
+const Navbar = ({ className = "bq-navbar", logo, fixedLogo, links, options }) => {
     const [isMenuOpen, setMenuState] = (0, react_1.useState)(false);
     const [isNavbarFixed, setHeaderState] = (0, react_1.useState)(false);
     const headerEl = (0, react_1.useRef)();
@@ -51,8 +52,12 @@ const Navbar = ({ className = 'bq-navbar', logo, fixedLogo, links }) => {
     const handleClick = () => {
         setMenuState(state => !state);
     };
+    const toggleMenu = () => {
+        setMenuState(false);
+    };
     (0, react_1.useEffect)(() => {
         setHandleScroll();
+        (0, single_page_scrolling_navigation_1.singlePageNavigation)(Object.assign({ selector: '.bq-menu', childSelector: '.bq-menu a', time: 2000, easing: 'easeInOutQuad', gap: 0, cb: () => toggleMenu() }, options));
     }, []);
     return (react_1.default.createElement(Navbar_styled_1.Wrapper, { className: (0, classnames_1.default)(className, { 'is-fixed': isNavbarFixed }), ref: headerEl },
         react_1.default.createElement(Navbar_styled_1.Column, null, fixedLogo && isNavbarFixed ? (react_1.default.createElement(Image_1.Image, { src: fixedLogo.src, alt: fixedLogo.alt, height: fixedLogo.height, width: fixedLogo.width, isSingle: true })) : (react_1.default.createElement(Image_1.Image, { src: logo.src, alt: logo.alt, height: logo.height, width: logo.width, isSingle: true }))),

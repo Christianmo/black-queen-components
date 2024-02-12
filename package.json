@@ -1,6 +1,6 @@
 {
   "name": "black-queen-components",
-  "version": "0.93.0",
+  "version": "0.98.2",
   "description": "",
   "main": "dist/index.js",
   "exports": {
@@ -11,7 +11,7 @@
     "./organisms": "./dist/components/organisms/index.js",
     "./organisms/*": "./dist/components/organisms/*/index.js",
     "./layout": "./dist/components/layout/index.js",
-    "./layout/*": "./dist/components/layout/*/index.js",    
+    "./layout/*": "./dist/components/layout/*/index.js",
     "./utils": "./dist/common/utils/index.js",
     "./constants": "./dist/common/constants/index.js"
   },
@@ -47,17 +47,18 @@
   "peerDependencies": {
     "@glidejs/glide": "3.6.0",
     "classnames": "2.3.2",
-    "styled-components": "6.0.8",
     "isomorphic-dompurify": "1.9.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "6.0.8"
   },
   "dependencies": {
     "@glidejs/glide": "3.6.0",
     "classnames": "2.3.2",
-    "isomorphic-dompurify": "^1.9.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "isomorphic-dompurify": "1.9.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "single-page-scrolling-navigation": "^1.2.3",
     "styled-components": "6.0.8"
   }
 }

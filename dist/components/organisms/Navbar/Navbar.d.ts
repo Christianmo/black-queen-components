@@ -19,6 +19,7 @@ interface HeaderProps {
     };
     links: LinkProps[];
     className?: string;
+    options?: any;
 }
 export declare const Navbar: FC<HeaderProps>;
 export {};

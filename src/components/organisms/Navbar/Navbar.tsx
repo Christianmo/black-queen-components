@@ -1,9 +1,10 @@
 import React, { FC, useEffect, useState, useRef } from "react";
 import classNames from 'classnames';
+import { singlePageNavigation } from 'single-page-scrolling-navigation';
 import { Image } from "../../atoms/Image";
 import { Hamburger } from "../../atoms/Hamburger";
 import { Menu } from "../../molecules/Menu";
-import { Wrapper, Column } from './Navbar.styled'
+import { Wrapper, Column } from './Navbar.styled';
 
 interface LinkProps {
   label: string;
@@ -26,11 +27,13 @@ interface HeaderProps {
   }
   links: LinkProps[];
   className?: string;
+  options?: any;
 }
 
-export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, fixedLogo, links }) => {
+export const Navbar: FC<HeaderProps> = ({ className="bq-navbar", logo, fixedLogo, links, options }) => {
   const [isMenuOpen, setMenuState] = useState(false);
   const [isNavbarFixed, setHeaderState] = useState(false);
+  
   const headerEl = useRef<any>()
 
   const handleScroll = () => {
@@ -50,8 +53,21 @@ export const Navbar: FC<HeaderProps> = ({ className='bq-navbar', logo, fixedLogo
     setMenuState(state => !state);
   }
 
+  const toggleMenu = () => {
+    setMenuState(false);
+  }
+
   useEffect(() => {
     setHandleScroll();
+    singlePageNavigation({
+      selector: '.bq-menu',
+      childSelector: '.bq-menu a',
+      time: 2000,
+      easing: 'easeInOutQuad',
+      gap: 0,
+      cb: () => toggleMenu(),
+      ...options,
+    });
   }, [])
 
   return (
